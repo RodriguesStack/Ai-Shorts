@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Vídeos TikTok</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #ff4757;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #ff6b81;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center">Gerador de Vídeos para TikTok</h2>
+        <p class="text-center">Insira a URL do vídeo do YouTube e, opcionalmente, defina os tempos de início e fim.</p>
+
+        <form action="/" method="POST">
+            <div class="form-group">
+                <label for="url">URL do YouTube:</label>
+                <input type="text" class="form-control" id="url" name="url" placeholder="Insira a URL do YouTube" required>
+            </div>
+
+            <div class="form-group">
+                <label for="start_time">Tempo de Início (em segundos, opcional):</label>
+                <input type="number" class="form-control" id="start_time" name="start_time" placeholder="Ex: 30">
+            </div>
+
+            <div class="form-group">
+                <label for="end_time">Tempo de Fim (em segundos, opcional):</label>
+                <input type="number" class="form-control" id="end_time" name="end_time" placeholder="Ex: 90">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Gerar Vídeo</button>
+        </form>
+
+        <p class="text-center text-muted mt-4">
+            Se os tempos de início e fim não forem definidos, os melhores momentos serão detectados automaticamente.
+        </p>
+    </div>
+
+</body>
+</html>

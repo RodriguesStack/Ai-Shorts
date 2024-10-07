@@ -72,3 +72,32 @@ The script will download the YouTube video, analyze its transcript using OpenAI'
 
 Please note that the GPT-4 model and transcript analysis functionality in the provided code are simulated and not fully functional. You would need a valid OpenAI API key and a working GPT-4 model to perform transcript analysis.
 
+
+
+sudo apt-get install build-essential cmake && sudo apt-get install libopenblas-dev liblapack-dev && sudo apt-get install libx11-dev libgtk-3-dev && sudo apt-get install python3-dev python3-pip && sudo apt-get install libboost-all-dev 
+
+sudo apt-get remove cmake && sudo snap install cmake --classic
+
+
+import subprocess
+
+def baixar_video_youtube(url, saida='./video.mp4'):
+    try:
+        # Baixar o vídeo usando youtube-dl ou yt-dlp
+        comando = ['yt-dlp', '-o', saida, url]
+        
+        # Executa o comando no sistema operacional
+        resultado = subprocess.run(comando, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        
+        # Verifica se houve erros
+        if resultado.returncode == 0:
+            print(f"Download concluído! Vídeo salvo como: {saida}")
+        else:
+            print(f"Erro durante o download: {resultado.stderr}")
+            
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
+
+# Exemplo de uso
+url_video = "https://www.youtube.com/watch?v=bBCbhIKKup8"
+baixar_video_youtube(url_video, saida='./meu_video.mp4')
